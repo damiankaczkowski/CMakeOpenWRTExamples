@@ -1,2 +1,0 @@
-# CMakeOpenWRTExamples
-CMakeOpenWRTExamples
