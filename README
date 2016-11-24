@@ -1,5 +1,5 @@
 Copyright (C) 2008 Frank Cervenka
-Copyright (C) 2016 Alexander V. Kozhaev
+Copyright (C) 2016 Alexander V. Kozhaev (see diff)
 This is free software, licensed under the GNU General Public License v2.
 
 Here you are, so you successfully did "tar zxvf CMakeOpenWrtExamples.tar.gz"
@@ -11,9 +11,11 @@ You also can build these apps and libs for the host system without changing
 the buildfiles or the sources.
 
 1. What you need
-
+Frank Cervenka:
 I don't know.
 Today (01/11/2008) I use 2.6.23-gentoo-r3, gcc-4.1.2 and cmake-2.4.6-r1 
+Alexander V. Kozhaev:
+Today (24/11/2016) I use 4.4.0-47-generic Ubuntu-16.04.4 SMP, gcc-5.4.0 and cmake-3.7.0
 
 2. Build lib for host:
 
@@ -82,9 +84,9 @@ go to OpenWRT/trunk/ dir
 make package/index
 cp bin/* /var/www/localhost/htdocs/openwrt/mips/9456/ -R (my apache home)
 ssh or minicom to router
-ipkg update (apache needs to be running on host and routers /etc/ipkg.conf needs to
+opkg update (apache needs to be running on host and routers /etc/ipkg.conf needs to
 point to it)
-ipkg install hellocmakeapp (pulls deps in)
+opkg install hellocmakeapp (pulls deps in)
 
 7. Run app on Router
 hellocmakeapp
