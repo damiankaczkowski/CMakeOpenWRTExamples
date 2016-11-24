@@ -19,10 +19,10 @@ IF (IN_OPENWRT)
   SET_TARGET_PROPERTIES(hellocmakeapp PROPERTIES COMPILE_FLAGS "-I $ENV{STAGING_DIR}/usr/include/uClibc++")
 ELSE (IN_OPENWRT)
   ADD_DEFINITIONS("-Wall -g")
-  INCLUDE_DIRECTORIES(/usr/local/include/libhellocmakemm)
+  INCLUDE_DIRECTORIES(/usr/include/libhellocmakemm)
   TARGET_LINK_LIBRARIES(hellocmakeapp hellocmakemm)
-  INSTALL(PROGRAMS hellocmakeapp DESTINATION /usr/local/bin)
+  INSTALL(PROGRAMS hellocmakeapp DESTINATION /usr/bin)
   ADD_CUSTOM_TARGET(uninstall
-  COMMAND "rm" -f "/usr/local/bin/hellocmakeapp"
+  COMMAND "rm" -f "/usr/bin/hellocmakeapp"
   )
 ENDIF(IN_OPENWRT)

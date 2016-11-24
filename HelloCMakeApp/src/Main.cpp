@@ -4,6 +4,7 @@
  This is free software, licensed under the GNU General Public License v2.
 */
 #include "Main.hpp"
+#include <cstdlib>
 
 int main (int argc, char *argv[])
 {

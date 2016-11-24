@@ -1,4 +1,5 @@
 Copyright (C) 2008 Frank Cervenka
+Copyright (C) 2016 Alexander V. Kozhaev
 This is free software, licensed under the GNU General Public License v2.
 
 Here you are, so you successfully did "tar zxvf CMakeOpenWrtExamples.tar.gz"
@@ -25,8 +26,9 @@ make
 
 sudo make install
 
-libs will be installed in /usr/local/lib/
-headers will be installed in /usr/local/include/libhellocmakemm/
+libs will be installed in /usr/lib/
+headers will be installed in /usr/include/libhellocmakemm/
+
 
 2.2. Uninstall lib from host:
 
@@ -43,7 +45,7 @@ make
 
 sudo make install
 
-app will be installed in /usr/local/bin/
+app will be installed in /usr/bin/
 
 3.2. Run app
 
@@ -60,7 +62,7 @@ go to your OpenWRT/trunk/ dir
 make menuconfig
 select Libraries->libhellocmakemm as module
 save and exit
-make package/HelloCMakeLibMM-compile V=99
+make package/HelloCMakeLibMM/compile -j1 V=s
 
 5. Build app for OpenWRT target:
 
@@ -69,7 +71,7 @@ go to your OpenWRT/trunk/ dir
 make menuconfig
 select Utilities->hellocmakeapp as module
 save and exit
-make package/HelloCMakeApp-compile V=99
+make package/HelloCMakeApp/compile -j1 V=s
 
 6. Install lib and app on router
 You decide...

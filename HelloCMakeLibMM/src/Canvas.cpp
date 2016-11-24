@@ -4,6 +4,7 @@
  This is free software, licensed under the GNU General Public License v2.
 */
 #include "Canvas.hpp"
+#include <cmath>
 
 const int Canvas::OUT_OF_CANVAS_BOUNDS=-1;
 const int Canvas::COLOR_BLACK=32;
