@@ -1,0 +1,21 @@
+Copyright (C) 2016 Alexander V. Kozhaev
+This is free software, licensed under the GNU General Public License v2.1.
+
+1. put 'cppcalc' folder to 'packages' folder of OpenWrt build system (OWBS)
+
+2. run 'make menuconfig' in OWBS root
+
+3. go to 'Utilities' and mark 'cppcalc' as module<M>)	
+
+4. exit	and save changes
+
+5. run 'make package/dev/cppcalc/compile -j1 V=s'
+
+6. find file 'bin/<target>/packages/base/cppcalc_0.0.1-1_<target>.ipk'
+
+7. copy it to your device and install by 'opkg install <filename>'
+
+8. run 'cppcalc 2 x 5.2' for examle (result must be 10.4)
+
+don't forget about uclibcxx dependency
+
