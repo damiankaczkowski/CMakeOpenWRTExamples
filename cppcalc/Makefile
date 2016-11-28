@@ -22,6 +22,7 @@ define Package/cppcalc
 	SECTION:=utils
 	CATEGORY:=Utilities
 	TITLE:=Simple console calculator
+	#+libstdcpp for standard c++ library
 	DEPENDS:=+uclibxx
 endef
 

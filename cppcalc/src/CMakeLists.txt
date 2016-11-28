@@ -10,8 +10,10 @@ set(IN_OPENWRT $ENV{IN_OPENWRT})
 IF (IN_OPENWRT)
 add_definitions("$ENV{TARGET_LDFLAGS}" "$ENV{TARGET_CPPFLAGS}" "$ENV{TARGET_CFLAGS}")
 include_directories("$ENV{TARGET_LDFLAGS}" "$ENV{TARGET_CPPFLAGS}" "$ENV{TARGET_CFLAGS}")
+#change uClibc++ to stdc++ for standard c++ library
 target_link_libraries(${PROJECT_NAME} uClibc++ c gcc_s "$ENV{TARGET_LDFLAGS}")
 set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "-nodefaultlibs -fno-builtin -fno-rtti -nostdinc++")
+#remove this string for standard c++ library
 set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "-I $ENV{STAGING_DIR}/usr/include/uClibc++")
 ELSE (IN_OPENWRT)
 add_definitions("-Wall -g")
